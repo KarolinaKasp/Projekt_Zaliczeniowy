@@ -286,6 +286,8 @@ $back.addEventListener("click", function () {
   $form.style.display = "none";
   $main.style.display = "block";
   $colors.innerText = "";
+  $acc2.innerText = "Add to Cart";
+  $acc1.innerText = "Add to Cart";
 });
 
 // SUBMITTING FORM
