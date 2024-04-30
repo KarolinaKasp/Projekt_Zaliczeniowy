@@ -90,7 +90,7 @@ input[type="date"],
 }
 
 .radio-container label {
-  margin-right: 10px; /* Adjust as needed */
+  margin-right: 10px;
 }
 
 .radio-container input[type="radio"] {
