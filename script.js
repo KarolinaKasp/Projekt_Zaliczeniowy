@@ -108,7 +108,6 @@ fetch(
   });
 
 // DISPLAYING STYLES
-$main.style.display = "block";
 $form.style.display = "none";
 $thanks.style.display = "none";
 $error.style.display = "none";
@@ -130,7 +129,7 @@ if (localStorage.getItem("userData") !== null) {
 let clickedColorName = "";
 
 $product1.addEventListener("click", function () {
-  $form.style.display = "block";
+  $form.style.display = "flex";
   $main.style.display = "none";
   $prd_img.src = $prd1_img.src;
   $prd_name.innerText = $prd1_name.innerText;
@@ -151,7 +150,7 @@ $product1.addEventListener("click", function () {
 });
 
 $product2.addEventListener("click", function () {
-  $form.style.display = "block";
+  $form.style.display = "flex";
   $main.style.display = "none";
   $prd_img.src = $prd2_img.src;
   $prd_name.innerText = $prd2_name.innerText;
@@ -172,7 +171,7 @@ $product2.addEventListener("click", function () {
 });
 
 $product3.addEventListener("click", function () {
-  $form.style.display = "block";
+  $form.style.display = "flex";
   $main.style.display = "none";
   $prd_img.src = $prd3_img.src;
   $prd_name.innerText = $prd3_name.innerText;
@@ -193,7 +192,7 @@ $product3.addEventListener("click", function () {
 });
 
 $product4.addEventListener("click", function () {
-  $form.style.display = "block";
+  $form.style.display = "flex";
   $main.style.display = "none";
   $prd_img.src = $prd4_img.src;
   $prd_name.innerText = $prd4_name.innerText;
@@ -214,7 +213,7 @@ $product4.addEventListener("click", function () {
 });
 
 $product5.addEventListener("click", function () {
-  $form.style.display = "block";
+  $form.style.display = "flex";
   $main.style.display = "none";
   $prd_img.src = $prd5_img.src;
   $prd_name.innerText = $prd5_name.innerText;
@@ -260,6 +259,10 @@ window.onbeforeunload = function () {
 };
 
 // ACCESSORIES
+$acc1.addEventListener("click", function (event) {
+  event.preventDefault();
+});
+
 $acc1.addEventListener("click", function () {
   if ($acc1.innerText === "Remove from Cart") {
     $acc1.innerText = "Add to Cart";
@@ -268,6 +271,10 @@ $acc1.addEventListener("click", function () {
     $f_price.innerText = (Number($f_price.innerText) + 6).toFixed(2);
     $acc1.innerText = "Remove from Cart";
   }
+});
+
+$acc2.addEventListener("click", function (event) {
+  event.preventDefault();
 });
 
 $acc2.addEventListener("click", function () {
@@ -284,13 +291,17 @@ $acc2.addEventListener("click", function () {
 
 $back.addEventListener("click", function () {
   $form.style.display = "none";
-  $main.style.display = "block";
+  $main.style.display = "grid";
   $colors.innerText = "";
   $acc2.innerText = "Add to Cart";
   $acc1.innerText = "Add to Cart";
 });
 
 // SUBMITTING FORM
+
+$submit.addEventListener("click", function (event) {
+  event.preventDefault();
+});
 
 $submit.addEventListener("click", function () {
   const fullName = /^[A-Z][a-z]+\s[A-Z][a-z]+$/;
@@ -308,6 +319,7 @@ $submit.addEventListener("click", function () {
     $error.style.display = "none";
     $form.style.display = "none";
     $thanks.style.display = "block";
+    $main.style.display = "none";
     // SUMMARY
     $f_name.innerText = $prd_name.innerText;
     $f_img.src = $prd_img.src;
@@ -327,5 +339,6 @@ $submit.addEventListener("click", function () {
     $cash.checked = false;
   } else {
     $error.style.display = "block";
+    $main.style.display = "none";
   }
 });

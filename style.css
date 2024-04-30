@@ -10,6 +10,20 @@ body {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
 }
 
 header {
@@ -23,19 +37,12 @@ h1 {
   margin: 0;
 }
 
-.container#main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .product {
-  width: calc(50% - 20px);
-  margin: 20px;
   background-color: white;
   border: 1px solid black;
   padding: 10px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .product:hover {
@@ -53,16 +60,41 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  flex: 1;
+  margin-right: calc(20% - 20px);
+  margin-top: 0%;
+  width: calc(30% - 20px);
+  order: 1;
 }
 
-.form {
+form {
+  width: calc(50% - 20px);
   display: flex;
   flex-direction: column;
+  order: 2;
 }
 
 .input_container {
   margin-bottom: 15px;
+}
+
+input[type="date"],
+#pickup_input,
+#name_input {
+  width: calc(70% - 10px);
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+}
+
+.radio-container label {
+  margin-right: 10px; /* Adjust as needed */
+}
+
+.radio-container input[type="radio"] {
+  vertical-align: middle;
 }
 
 ul {
@@ -89,6 +121,7 @@ button {
   transition: all 0.3s ease;
   margin-right: 3px;
   border: 1px solid white;
+  max-width: fit-content;
 }
 
 button:hover {
